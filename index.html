@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Creative Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+    <div class="loader-content">
+        <div class="loader-ring"></div>
+        <h2 class="loader-title">Portfolio</h2>
+        <p class="loader-subtitle">CREATIVE DEVELOPER</p>
+        <div class="loader-bar-container">
+            <div class="loader-bar-bg">
+                <div class="loader-bar" id="progressBar"></div>
+            </div>
+            <div class="loader-bar-labels">
+                <span>Loading</span>
+                <span id="progressText">0%</span>
+            </div>
+        </div>
+        <div class="loader-dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" style="display: none;">
+    
+    <!-- HOME FEED PAGE -->
+    <div class="page" id="homePage">
+        <header class="home-header">
+            <div class="header-left">
+                <button class="icon-btn"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="header-center">
+                <span class="insta-logo">Home Feed</span>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn"><i class="far fa-heart"></i><span class="badge">1</span></button>
+            </div>
+        </header>
+
+        <!-- Stories Row -->
+        <div class="stories-row-wrapper">
+   
+            <div class="stories-row" id="storiesRow">
+                <div class="story-item">
+                    <div class="story-ring active">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Your story">
+                    </div>
+                    <span class="story-name">Your story</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-ring">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face" alt="yamaayah">
+                    </div>
+                    <span class="story-name">yamaayah_s..</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-ring">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face" alt="dhinesh">
+                    </div>
+                    <span class="story-name">dhinesh2</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-ring">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face" alt="button">
+                    </div>
+                    <span class="story-name">button.hoo..</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-ring">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&h=150&fit=crop" alt="story5">
+                    </div>
+                    <span class="story-name">nightcoder</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-ring">
+                        <img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=150&h=150&fit=crop" alt="story6">
+                    </div>
+                    <span class="story-name">pixel.pro</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-ring">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=150&h=150&fit=crop" alt="story7">
+                    </div>
+                    <span class="story-name">ai.labs</span>
+                </div>
+            </div>
+       
+        </div>
+
+        <!-- Feed Posts -->
+        <div class="feed-posts">
+            <!-- Post 1 -->
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="post-user">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&h=60&fit=crop&crop=face" alt="user">
+                        <div class="post-user-info">
+                            <span class="username">newstamil24x7digital <i class="fas fa-check-circle verified"></i></span>
+                            <span class="audio-info"><i class="fas fa-music"></i> newstamil24x7digital · Original audio</span>
+                        </div>
+                    </div>
+                    <button class="more-btn"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+                <div class="post-media">
+                    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=600&h=400&fit=crop" alt="Post">
+                    <div class="location-tag"><i class="fas fa-map-marker-alt"></i> சென்னை</div>
+                </div>
+                <div class="post-actions-row">
+                    <div class="post-actions-left">
+                        <button class="post-action-btn"><i class="far fa-heart"></i><span>10.5K</span></button>
+                        <button class="post-action-btn"><i class="far fa-comment"></i><span>57</span></button>
+                        <button class="post-action-btn"><i class="fas fa-retweet"></i><span>283</span></button>
+                        <button class="post-action-btn"><i class="far fa-paper-plane"></i><span>791</span></button>
+                    </div>
+                    <button class="post-action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                </div>
+                <div class="post-likes">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=30&h=30&fit=crop&crop=face" class="like-avatar">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=30&h=30&fit=crop&crop=face" class="like-avatar">
+                    <span>Liked by <strong>tvk_kamesh_26</strong> and <strong>others</strong></span>
+                </div>
+                <div class="post-caption">
+                    <span class="caption-user">newstamil24x7digital</span> பெரம்பூர்: முதலமைச்சர் விஜயநகர்... <span class="more-text">more</span>
+                </div>
+                <div class="post-time">7 hours ago · <span class="translate">See Translation</span></div>
+            </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+
+    <!-- SEARCH PAGE -->
+    <div class="page" id="searchPage" style="display:none;">
+        <div class="search-header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="explore-grid">
+            <div class="explore-item tall"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=600&fit=crop" alt=""></div>
+            <div class="explore-item"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=400&fit=crop" alt=""></div>
+            <div class="explore-item"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop" alt=""></div>
+            <div class="explore-item"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=400&fit=crop" alt=""></div>
+            <div class="explore-item"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=400&fit=crop" alt=""></div>
+            <div class="explore-item"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=400&fit=crop" alt=""></div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+
+    <!-- CREATE PAGE -->
+    <div class="page" id="createPage" style="display:none;">
+        <div class="create-screen">
+            <div class="create-bg"></div>
+            <div class="create-content">
+                <button class="create-main-btn"><i class="fas fa-plus"></i></button>
+                <h2 class="create-title">Create Something</h2>
+                <p class="create-subtitle">Your canvas is ready. Start creating and let your imagination flow.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- REELS PAGE -->
+    <div class="page" id="reelsPage" style="display:none;">
+        <div class="reels-viewer">
+            <div class="reels-tabs">
+                <span class="reels-tab active">Reels</span>
+                <span class="reels-tab">Friends</span>
+            </div>
+            <div class="reel-video">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=800&fit=crop" alt="Reel">
+            </div>
+            <div class="reels-sidebar">
+                <button class="reel-action"><i class="far fa-heart"></i><span>88</span></button>
+                <button class="reel-action"><i class="far fa-comment"></i><span>2</span></button>
+                <button class="reel-action"><i class="far fa-paper-plane"></i><span>24</span></button>
+                <button class="reel-action"><i class="far fa-bookmark"></i></button>
+                <button class="reel-action"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+            <div class="reels-bottom-info">
+                <div class="reel-user">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" alt="">
+                    <span>creative_coder</span>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <p class="reel-caption">Building the next big thing. Wait until the end... #coding #setup #developer</p>
+                <div class="reel-audio"><i class="fas fa-music"></i> Original audio - creative_coder</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFILE PAGE -->
+    <div class="page" id="profilePage" style="display:none;">
+        <header class="profile-header">
+            <div class="header-left">
+                <button class="icon-btn"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="header-center">
+                creative.dev <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i>
+            </div>
+            <div class="header-right">
+                <span class="behance-icon">Bē</span>
+                <i class="fab fa-tiktok"></i>
+                <button class="icon-btn"><i class="fab fa-threads"></i><span class="badge">9+</span></button>
+                <button class="icon-btn menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </header>
+
+        <section class="profile">
+            <div class="profile-stats">
+                <div class="avatar-ring">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Profile" class="avatar">
+                    <button class="add-story"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="stat"><span class="num">2,458</span><span class="label">posts</span></div>
+                <div class="stat"><span class="num">24.1K</span><span class="label">followers</span></div>
+                <div class="stat"><span class="num">8,137</span><span class="label">following</span></div>
+            </div>
+
+            <div class="profile-info">
+                <p class="category">DESIGN & TECHNOLOGY</p>
+                <h1>Creative Developer / UI Designer</h1>
+                <p class="bio">"Crafting digital experiences"</p>
+                <a href="#" class="link">linktr.ee/creative.dev</a>
+            </div>
+
+            <div class="profile-actions">
+                <button class="pill-btn"><i class="fab fa-facebook"></i> CreativeDev</button>
+                <button class="pill-btn">Bē creative.dev</button>
+                <button class="pill-btn"><i class="fas fa-phone"></i> Contact info</button>
+            </div>
+            <button class="add-btn"><i class="fas fa-plus"></i> Add</button>
+
+            <div class="dashboard-card" onclick="openModal('dashboardModal')">
+                <div>
+                    <h4>Professional dashboard</h4>
+                    <p>53.7K views in the last 30 days</p>
+                </div>
+                <i class="fas fa-chart-simple"></i>
+            </div>
+
+            <div class="action-row">
+                <button class="action-btn" onclick="openModal('editModal')">Edit profile</button>
+                <button class="action-btn" onclick="openModal('shareModal')">Share profile</button>
+                <button class="action-btn" onclick="openModal('subModal')">Subscription</button>
+            </div>
+
+            <div class="highlights">
+                <div class="highlight"><div class="highlight-circle"><i class="fas fa-plus"></i></div><span>New</span></div>
+                <div class="highlight"><div class="highlight-circle"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&auto=format&fit=crop&q=60" alt=""></div><span>2026</span></div>
+                <div class="highlight"><div class="highlight-circle"><img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=100&auto=format&fit=crop&q=60" alt=""></div><span>ACCOMP...</span></div>
+                <div class="highlight"><div class="highlight-circle"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=100&auto=format&fit=crop&q=60" alt=""></div><span>Ai</span></div>
+                <div class="highlight"><div class="highlight-circle"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=100&auto=format&fit=crop&q=60" alt=""></div><span>TVK</span></div>
+            </div>
+        </section>
+
+        <!-- TAB NAVIGATION -->
+        <nav class="tabs">
+            <div class="tab active" data-tab="grid"><i class="fas fa-th"></i></div>
+            <div class="tab" data-tab="skills"><i class="fas fa-layer-group"></i></div>
+            <div class="tab" data-tab="reels"><i class="fas fa-play"></i></div>
+            <div class="tab" data-tab="tagged"><i class="far fa-bookmark"></i></div>
+        </nav>
+
+        <!-- TAB CONTENT: GRID -->
+        <div class="tab-content active" id="gridTab">
+            <div class="image-grid">
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Coding"><div class="grid-overlay"><i class="fas fa-clone"></i></div></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Cyberpunk"><div class="grid-overlay"><i class="fas fa-play"></i><span>19.9K</span></div></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Tech"></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Meeting"><div class="grid-overlay"><i class="fas fa-play"></i><span>312K</span></div></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Office"></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Team"></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Coding2"></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Abstract"></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Tech2"></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Coding3"></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Office2"><div class="grid-overlay"><i class="fas fa-play"></i><span>27K</span></div></div>
+                <div class="grid-item"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&auto=format&fit=crop&q=60" loading="lazy" alt="Cyberpunk2"></div>
+            </div>
+            <div class="pagination-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: SKILLS & PROJECTS -->
+        <div class="tab-content" id="skillsTab">
+            <div class="section-header">Skills</div>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <div class="skill-info"><div class="skill-icon react"><i class="fab fa-react"></i></div><span>React</span></div>
+                    <div class="skill-bar"><div class="fill" style="width: 95%; background: linear-gradient(90deg, #00d2ff, #3a7bd5);"></div></div>
+                    <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><div class="skill-icon ts"><i class="fab fa-js"></i></div><span>TypeScript</span></div>
+                    <div class="skill-bar"><div class="fill" style="width: 88%; background: linear-gradient(90deg, #007bff, #6610f2);"></div></div>
+                    <span class="skill-percent">88%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><div class="skill-icon next"><span>N</span></div><span>Next.js</span></div>
+                    <div class="skill-bar"><div class="fill" style="width: 85%; background: #fff;"></div></div>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><div class="skill-icon node"><i class="fab fa-node"></i></div><span>Node.js</span></div>
+                    <div class="skill-bar"><div class="fill" style="width: 80%; background: #339933;"></div></div>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><div class="skill-icon tw"><i class="fab fa-css3-alt"></i></div><span>Tailwind</span></div>
+                    <div class="skill-bar"><div class="fill" style="width: 92%; background: linear-gradient(90deg, #38bdf8, #0ea5e9);"></div></div>
+                    <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><div class="skill-icon figma"><i class="fab fa-figma"></i></div><span>Figma</span></div>
+                    <div class="skill-bar"><div class="fill" style="width: 90%; background: linear-gradient(90deg, #f24e1e, #ff7262);"></div></div>
+                    <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><div class="skill-icon framer"><i class="fas fa-cube"></i></div><span>Framer</span></div>
+                    <div class="skill-bar"><div class="fill" style="width: 78%; background: linear-gradient(90deg, #ec4899, #f43f5e);"></div></div>
+                    <span class="skill-percent">78%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><div class="skill-icon gql"><i class="fas fa-project-diagram"></i></div><span>GraphQL</span></div>
+                    <div class="skill-bar"><div class="fill" style="width: 72%; background: linear-gradient(90deg, #e535ab, #ff69b4);"></div></div>
+                    <span class="skill-percent">72%</span>
+                </div>
+            </div>
+
+            <div class="section-header">Projects</div>
+            <div class="projects-list">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=150&fit=crop" alt="">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <span class="proj-title">Glassmorphism UI Kit</span>
+                            <span class="stars"><i class="fas fa-star"></i> 1.2K</span>
+                        </div>
+                        <p class="proj-desc">A comprehensive design system built with glassmorphism principles. 40+ reusable components.</p>
+                        <div class="proj-tags"><span>React</span><span>TypeScript</span><span>Figma</span><span>Tailwind</span></div>
+                        <div class="proj-actions">
+                            <button class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</button>
+                            <button class="proj-btn"><i class="fab fa-github"></i> GitHub</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=150&fit=crop" alt="">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <span class="proj-title">AI Creative Studio</span>
+                            <span class="stars"><i class="fas fa-star"></i> 867</span>
+                        </div>
+                        <p class="proj-desc">Generate stunning visuals with AI. Integrated with multiple image generation APIs.</p>
+                        <div class="proj-tags"><span>Next.js</span><span>Node.js</span><span>GraphQL</span><span>AI</span></div>
+                        <div class="proj-actions">
+                            <button class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</button>
+                            <button class="proj-btn"><i class="fab fa-github"></i> GitHub</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=150&fit=crop" alt="">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <span class="proj-title">Motion Portfolio</span>
+                            <span class="stars"><i class="fas fa-star"></i> 543</span>
+                        </div>
+                        <p class="proj-desc">Award-winning personal portfolio with physics-based animations, custom WebGL effects.</p>
+                        <div class="proj-tags"><span>React</span><span>Framer</span><span>WebGL</span><span>GSAP</span></div>
+                        <div class="proj-actions">
+                            <button class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</button>
+                            <button class="proj-btn"><i class="fab fa-github"></i> GitHub</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&h=150&fit=crop" alt="">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <span class="proj-title">Dev Dashboard</span>
+                            <span class="stars"><i class="fas fa-star"></i> 312</span>
+                        </div>
+                        <p class="proj-desc">Real-time developer productivity dashboard. Track GitHub activity, code metrics.</p>
+                        <div class="proj-tags"><span>TypeScript</span><span>Node.js</span><span>WebSocket</span><span>Charts</span></div>
+                        <div class="proj-actions">
+                            <button class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</button>
+                            <button class="proj-btn"><i class="fab fa-github"></i> GitHub</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: REELS -->
+        <div class="tab-content" id="reelsTab">
+            <div class="reels-grid">
+                <div class="reel-thumb"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=300&h=500&fit=crop" alt=""><div class="reel-overlay"><i class="fas fa-play"></i><span>44.1K</span></div></div>
+                <div class="reel-thumb"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&h=500&fit=crop" alt=""><div class="reel-overlay"><i class="fas fa-play"></i><span>19.9K</span></div></div>
+                <div class="reel-thumb"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=500&fit=crop" alt=""><div class="reel-overlay"><i class="fas fa-play"></i><span>312K</span></div></div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: TAGGED -->
+        <div class="tab-content" id="taggedTab">
+            <div class="tagged-empty">
+                <i class="far fa-user-circle"></i>
+                <p>Photos and videos of you</p>
+                <span>When people tag you in photos and videos, they'll appear here.</span>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <footer class="bottom-nav">
+        <div class="nav-item active" data-page="home"><i class="fas fa-home"></i></div>
+        <div class="nav-item" data-page="search"><i class="fas fa-search"></i></div>
+        <div class="nav-item create-btn" data-page="create"><i class="fas fa-plus"></i></div>
+        <div class="nav-item" data-page="reels"><i class="fas fa-play"></i></div>
+        <div class="nav-item" data-page="profile"><i class="far fa-user"></i></div>
+    </footer>
+</div>
+
+<!-- STORY VIEWER MODAL -->
+<div class="modal-overlay" id="storyModal">
+    <div class="story-viewer">
+        <div class="story-progress-bar">
+            <div class="story-progress"></div>
+        </div>
+        <div class="story-header">
+            <div class="story-user">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" alt="">
+                <span>cyber_punk</span>
+                <span class="story-time">Just now</span>
+            </div>
+            <div class="story-actions">
+                <button class="story-btn"><i class="fas fa-ellipsis-h"></i></button>
+                <button class="story-btn" onclick="closeModal('storyModal')"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="story-content">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&h=800&fit=crop" alt="Story">
+        </div>
+        <div class="story-footer">
+            <div class="story-reply">
+                <input type="text" placeholder="Reply to cyber_punk...">
+                <button><i class="far fa-heart"></i></button>
+                <button><i class="far fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- EDIT PROFILE MODAL -->
+<div class="modal-overlay" id="editModal">
+    <div class="modal-sheet">
+        <div class="modal-handle"></div>
+        <div class="modal-header" style="background: linear-gradient(90deg, #a855f7, #ec4899);">
+            <h2>Edit Profile</h2>
+            <button class="close-modal" onclick="closeModal('editModal')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-content">
+            <h4>PERSONAL INFO</h4>
+            <div class="input-group">
+                <label>Name</label>
+                <input type="text" value="Creative Developer">
+            </div>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" value="creative.dev">
+            </div>
+            <div class="input-group">
+                <label>Bio</label>
+                <textarea rows="2">Crafting digital experiences with code and creativity.</textarea>
+            </div>
+            <button class="modal-primary-btn">Save Changes</button>
+        </div>
+    </div>
+</div>
+
+<!-- SHARE PROFILE MODAL -->
+<div class="modal-overlay" id="shareModal">
+    <div class="modal-sheet">
+        <div class="modal-handle"></div>
+        <div class="modal-header" style="background: linear-gradient(90deg, #38bdf8, #6366f1);">
+            <h2>Share Profile</h2>
+            <button class="close-modal" onclick="closeModal('shareModal')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-content">
+            <h4>SHARE VIA LINK</h4>
+            <div class="input-group">
+                <label>Profile URL</label>
+                <input type="text" value="https://creative.dev/portfolio" readonly>
+            </div>
+            <button class="modal-primary-btn">Copy Link</button>
+        </div>
+    </div>
+</div>
+
+<!-- SUBSCRIPTION MODAL -->
+<div class="modal-overlay" id="subModal">
+    <div class="modal-sheet">
+        <div class="modal-handle"></div>
+        <div class="modal-header" style="background: linear-gradient(90deg, #f59e0b, #ef4444);">
+            <h2>Subscription</h2>
+            <button class="close-modal" onclick="closeModal('subModal')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-content">
+            <h4>CURRENT PLAN</h4>
+            <div class="input-group">
+                <label>Plan</label>
+                <span class="static-val">Professional Creator</span>
+            </div>
+            <div class="input-group">
+                <label>Status</label>
+                <span class="static-val">Active</span>
+            </div>
+            <div class="input-group">
+                <label>Renewal date</label>
+                <span class="static-val">August 1, 2026</span>
+            </div>
+            <button class="modal-primary-btn">Manage Plan</button>
+        </div>
+    </div>
+</div>
+
+<!-- DASHBOARD MODAL -->
+<div class="modal-overlay" id="dashboardModal">
+    <div class="modal-sheet">
+        <div class="modal-handle"></div>
+        <div class="modal-header" style="background: linear-gradient(90deg, #10b981, #3b82f6);">
+            <h2>Professional Dashboard</h2>
+            <button class="close-modal" onclick="closeModal('dashboardModal')"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-content">
+            <h4>INSIGHTS (LAST 30 DAYS)</h4>
+            <div class="dashboard-stats">
+                <div class="dash-stat">
+                    <span class="dash-num">53.7K</span>
+                    <span class="dash-label">Profile Views</span>
+                </div>
+                <div class="dash-stat">
+                    <span class="dash-num">12.4K</span>
+                    <span class="dash-label">Account Reached</span>
+                </div>
+                <div class="dash-stat">
+                    <span class="dash-num">3.2K</span>
+                    <span class="dash-label">Content Interactions</span>
+                </div>
+                <div class="dash-stat">
+                    <span class="dash-num">892</span>
+                    <span class="dash-label">New Followers</span>
+                </div>
+            </div>
+            <button class="modal-primary-btn">View Full Dashboard</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
