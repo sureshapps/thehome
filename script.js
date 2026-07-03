@@ -1003,3 +1003,4 @@ function initContentSystem() {
     window.openBlogPopup = openBlogPopup;
     window.closeBlogPopup = closeBlogPopup;
 }
+
