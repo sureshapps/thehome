@@ -43,23 +43,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showPage(pageName) {
         if (!pageName || !pages[pageName]) return;
+        const nextPage = pages[pageName];
+        if (nextPage.style.display === 'block') return; // already on this page
 
         navItems.forEach(n => n.classList.remove('active'));
         const navBtn = document.querySelector(`.nav-item[data-page="${pageName}"]`);
         if (navBtn) navBtn.classList.add('active');
 
-        Object.values(pages).forEach(p => { if (p) p.style.display = 'none'; });
-        pages[pageName].style.display = 'block';
+        const currentPage = Object.values(pages).find(p => p && p !== nextPage && p.style.display !== 'none');
 
-        if (pageName === 'create') {
-            document.querySelector('.create-screen').style.display = 'flex';
+        function revealNextPage() {
+            nextPage.style.display = 'block';
+            nextPage.classList.add('page-entering');
+            // Force a reflow so the browser registers the starting (opacity:0) state
+            // before we remove the class, which is what makes the fade actually animate.
+            void nextPage.offsetWidth;
+            nextPage.classList.remove('page-entering');
+
+            if (pageName === 'create') {
+                document.querySelector('.create-screen').style.display = 'flex';
+            }
+            if (pageName === 'reels') {
+                if (window.ReelsPlayer) window.ReelsPlayer.onShow();
+            } else {
+                if (window.ReelsPlayer) window.ReelsPlayer.onHide();
+            }
         }
 
-        if (pageName === 'reels') {
-            if (window.ReelsPlayer) window.ReelsPlayer.onShow();
-        } else {
-            if (window.ReelsPlayer) window.ReelsPlayer.onHide();
+        if (currentPage) {
+            currentPage.classList.add('page-leaving');
+            setTimeout(() => {
+                currentPage.style.display = 'none';
+                currentPage.classList.remove('page-leaving');
+            }, 200);
         }
+        revealNextPage();
     }
     window.showPage = showPage;
 
@@ -141,20 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ================= REEL ACTION ANIMATION =================
-    document.querySelectorAll('.reel-action').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const icon = this.querySelector('i');
-            if (icon && icon.classList.contains('far') && icon.classList.contains('fa-heart')) {
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-                icon.style.color = '#ff0055';
-            }
-            this.style.transform = 'scale(0.9)';
-            setTimeout(() => this.style.transform = 'scale(1)', 150);
-        });
-    });
-
     // ================= SKILL BAR ANIMATION =================
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -191,10 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 createBtn.style.transform = 'scale(1)';
                 // Switch to home after click
-                navItems.forEach(n => n.classList.remove('active'));
-                document.querySelector('[data-page="home"]').classList.add('active');
-                Object.values(pages).forEach(p => { if(p) p.style.display = 'none'; });
-                if (pages.home) pages.home.style.display = 'block';
+                showPage('home');
             }, 200);
         });
     }
@@ -238,12 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="reel-progress"><div class="reel-progress-fill"></div></div>
                 <div class="reel-mute-btn"><i class="fas fa-volume-up"></i></div>
                 <div class="reel-play-overlay"><i class="fas fa-play"></i></div>
-                <div class="reels-sidebar">
-                    <button class="reel-action reel-like-btn"><i class="far fa-heart"></i><span>${reel.likes}</span></button>
-                    <button class="reel-action"><i class="far fa-comment"></i><span>${reel.comments}</span></button>
-                    <button class="reel-action"><i class="fas fa-share"></i><span>Share</span></button>
-                    <button class="reel-action"><i class="fas fa-ellipsis-v"></i></button>
-                </div>
                 <div class="reels-bottom-info">
                     <div class="reel-user">
                         <img src="${reel.avatar}" alt="${reel.user}">
@@ -338,22 +333,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateMuteIcons();
             });
 
-            // Like button bounce + fill heart
+            // Like button bounce + fill heart (sidebar icons removed; guard in case markup changes)
             const likeBtn = slide.querySelector('.reel-like-btn');
-            likeBtn.addEventListener('click', () => {
-                const icon = likeBtn.querySelector('i');
-                if (icon.classList.contains('far')) {
-                    icon.classList.remove('far');
-                    icon.classList.add('fas');
-                    icon.style.color = '#ff0055';
-                } else {
-                    icon.classList.remove('fas');
-                    icon.classList.add('far');
-                    icon.style.color = '';
-                }
-                likeBtn.style.transform = 'scale(1.2)';
-                setTimeout(() => likeBtn.style.transform = 'scale(1)', 200);
-            });
+            if (likeBtn) {
+                likeBtn.addEventListener('click', () => {
+                    const icon = likeBtn.querySelector('i');
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        icon.style.color = '#ff0055';
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        icon.style.color = '';
+                    }
+                    likeBtn.style.transform = 'scale(1.2)';
+                    setTimeout(() => likeBtn.style.transform = 'scale(1)', 200);
+                });
+            }
         });
 
         // Desktop: ArrowUp / ArrowDown scrolls to the previous/next reel
@@ -474,7 +471,7 @@ function initContentSystem() {
             { icon: 'fa-solid fa-link', label: 'Copy link', href: '#copy' }
         ];
         const sheet = document.createElement('div');
-        sheet.className = 'modal-overlay active share-sheet-overlay';
+        sheet.className = 'modal-overlay share-sheet-overlay';
         sheet.innerHTML = `
             <div class="modal-sheet share-sheet">
                 <div class="modal-handle"></div>
@@ -490,10 +487,13 @@ function initContentSystem() {
             </div>`;
         document.body.appendChild(sheet);
         document.body.style.overflow = 'hidden';
-        requestAnimationFrame(() => sheet.querySelector('.share-sheet').style.transform = 'translateY(0)');
+        // Add "active" on the next frame (not immediately) so the browser registers
+        // the initial hidden state first and the fade/slide-up actually animates.
+        requestAnimationFrame(() => requestAnimationFrame(() => sheet.classList.add('active')));
         function destroy() {
-            sheet.remove();
+            sheet.classList.remove('active');
             document.body.style.overflow = '';
+            setTimeout(() => sheet.remove(), 350);
         }
         sheet.addEventListener('click', (e) => {
             if (e.target === sheet || e.target.closest('[data-close-share]')) destroy();
