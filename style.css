@@ -194,18 +194,21 @@ body::after {
 @keyframes popupIn { from { opacity: 0; transform: scale(0.96) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 
 /* ================= HEADER ================= */
+/* Floating glass bar: detached from the viewport edge on all sides so it
+   reads as a distinct card hovering over the content, not a flush bar. */
 header {
-    padding: 14px 18px; padding-top: max(14px, env(safe-area-inset-top));
+    padding: 13px 18px;
     display: flex; justify-content: space-between; align-items: center;
     background: var(--glass-fill-strong);
     backdrop-filter: blur(var(--glass-blur)) saturate(160%); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
-    border-bottom: 1px solid var(--glass-border-soft);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
     border-radius: var(--radius-xl);
-    position: sticky; top: 0; z-index: 100;
+    margin: max(12px, env(safe-area-inset-top)) 12px 16px;
+    position: sticky; top: 12px; z-index: 100;
 }
 
-.home-header { padding: 12px 18px; padding-top: max(12px, env(safe-area-inset-top)); }
+.home-header { padding: 11px 18px; }
 .header-left, .header-right { display: flex; align-items: center; gap: 12px; }
 .icon-btn {
     background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border-soft);
@@ -307,11 +310,14 @@ header {
 
 /* ================= SEARCH / EXPLORE ================= */
 .search-header {
-    padding: 14px 18px;
+    padding: 14px 16px;
     background: var(--glass-fill-strong);
     backdrop-filter: blur(var(--glass-blur)) saturate(160%); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
-    border-bottom: 1px solid var(--glass-border-soft);
-    position: sticky; top: 0; z-index: 100;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+    border-radius: var(--radius-xl);
+    margin: max(12px, env(safe-area-inset-top)) 12px 16px;
+    position: sticky; top: 12px; z-index: 100;
 }
 .search-bar {
     display: flex; align-items: center; gap: 10px;
@@ -852,7 +858,7 @@ header {
 
     .spacer { height: 40px; }
 
-    header, .search-header { position: sticky; top: 0; }
+    header, .search-header { position: sticky; top: 12px; }
 
     .feed-posts { max-width: 630px; margin: 0 auto; }
     .post-card {

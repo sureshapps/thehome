@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = document.getElementById('app');
 
     let progress = 0;
-    const duration = 9000; // 3 seconds
+    const duration = 2000; // 3 seconds
     const interval = 40;
     const step = 100 / (duration / interval);
 
