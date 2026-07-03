@@ -49,7 +49,8 @@
     
     <!-- HOME FEED PAGE -->
     <div class="page" id="homePage">
-        <header class="home-header">
+        <header class="home-header glow-card">
+            <span class="glow"></span>
             <div class="header-left">
                 <button class="icon-btn"><i class='fab fa-instagram' style='font-size:20px;color:rgb(255, 255, 255)'></i></button>
             </div>
@@ -124,7 +125,8 @@
 
     <!-- SEARCH PAGE -->
     <div class="page" id="searchPage" style="display:none;">
-        <div class="search-header">
+        <div class="search-header glow-card">
+            <span class="glow"></span>
             <div class="search-bar">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Search hashtags e.g. design, ai, ux">
@@ -161,7 +163,8 @@
 
     <!-- PROFILE PAGE -->
     <div class="page" id="profilePage" style="display:none;">
-        <header class="profile-header">
+        <header class="profile-header glow-card">
+            <span class="glow"></span>
             <div class="header-left">
                 <button class="icon-btn"><i class='fas fa-sun'></i></button>
             </div>
@@ -177,7 +180,8 @@
         </header>
 
         <section class="profile">
-            <div class="profile-card">
+            <div class="profile-card glow-card">
+                <span class="glow"></span>
                 <div class="profile-stats">
                     <div class="avatar-ring">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Profile" class="avatar">
@@ -227,7 +231,8 @@
         </section>
 
         <!-- TAB NAVIGATION -->
-        <nav class="tabs">
+        <nav class="tabs glow-card">
+            <span class="glow"></span>
             <div class="tab active" data-tab="grid"><i class="fas fa-th"></i></div>
             <div class="tab" data-tab="skills"><i class="fas fa-layer-group"></i></div>
             <div class="tab" data-tab="reels"><i class="fas fa-play"></i></div>
@@ -309,7 +314,8 @@
     </div>
 
     <!-- BOTTOM NAV -->
-    <footer class="bottom-nav">
+    <footer class="bottom-nav glow-card">
+        <span class="glow"></span>
         <div class="nav-item active" data-page="home"><i class="fas fa-home"></i></div>
         <div class="nav-item" data-page="search"><i class="fas fa-search"></i></div>
         <div class="nav-item create-btn" data-page="create"><i class="fas fa-plus"></i></div>
@@ -484,14 +490,14 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 180px;
-    height: 200px;
+    width: 220px;
+    height: 240px;
     background: rgba(255, 255, 255, 0);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    backdrop-filter: blur(15px);
     pointer-events: auto;
     transition: left 3.5s cubic-bezier(.45,.05,.55,.95),
                 top 3.5s cubic-bezier(.45,.05,.55,.95),
@@ -500,8 +506,8 @@
 }
 
 #robot-canvas {
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     cursor: pointer;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
 }
