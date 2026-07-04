@@ -79,6 +79,61 @@ body {
 
 #app { z-index: 1; background: transparent; }
 
+/* Register mesh-gradient custom properties so browsers know their types and can
+   actually animate/interpolate them across keyframes (percentages + colors are
+   NOT animatable via plain --custom-props unless registered like this). Shared
+   by both the #loader and #mesh-bg animated gradients. */
+@property --x-0 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-0 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-0 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-0 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-0 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-1 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-1 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-1 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-1 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-1 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-2 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-2 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-2 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-2 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-2 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-3 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-3 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-3 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-3 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-3 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-4 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-4 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-4 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-4 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-4 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-5 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-5 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-5 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-5 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-5 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-6 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-6 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-6 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-6 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-6 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-7 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-7 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-7 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-7 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-7 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-8 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-8 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-8 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-8 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-8 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+@property --x-9 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --y-9 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-start-9 { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --s-end-9 { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --c-9 { syntax: '<color>'; inherits: false; initial-value: transparent; }
+
 /* ================= LOADER ================= */
 @keyframes ani-animateMeshLoader {
     0% {
